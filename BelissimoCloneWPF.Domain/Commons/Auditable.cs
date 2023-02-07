@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Domain.Commons
 {
-    public class Auditable
+    public abstract class Auditable
     {
         public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
