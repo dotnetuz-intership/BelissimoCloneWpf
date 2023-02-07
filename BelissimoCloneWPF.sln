@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelissimoCloneWPF", "BelissimoCloneWPF\BelissimoCloneWPF.csproj", "{F74724DF-875E-4E58-9AC6-56BF17720326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF", "BelissimoCloneWPF\BelissimoCloneWPF.csproj", "{F74724DF-875E-4E58-9AC6-56BF17720326}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{5307A778-7E26-4AAE-B2B6-C02D655AA121}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelissimoCloneWPF.Domain", "BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj", "{D23A0E10-1F26-40B7-AC59-AB3E5505D010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{F74724DF-875E-4E58-9AC6-56BF17720326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74724DF-875E-4E58-9AC6-56BF17720326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74724DF-875E-4E58-9AC6-56BF17720326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
