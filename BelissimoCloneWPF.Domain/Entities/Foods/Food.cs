@@ -9,8 +9,6 @@ namespace BelissimoCloneWPF.Domain.Entities.Foods
         public int Price { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int AttachmentId { get; set; }
-
-
+        public int AttachmentId { get; set; }        
     }
 }
