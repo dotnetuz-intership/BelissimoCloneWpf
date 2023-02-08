@@ -1,6 +1,6 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
 
-namespace BelissimoCloneWPF.Domain.Entites.Branches
+namespace BelissimoCloneWPF.Domain.Entities.Branchs
 {
     public sealed class Branch : Auditable
     {
