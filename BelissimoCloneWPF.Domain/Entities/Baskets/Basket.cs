@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Domain.Entities.Baskets
 {
-    internal class Basket
+    public sealed class Basket: Auditable
     {
+        public int UserId { get; set; }
+        public int TotalPrice { get; set; }
     }
 }
