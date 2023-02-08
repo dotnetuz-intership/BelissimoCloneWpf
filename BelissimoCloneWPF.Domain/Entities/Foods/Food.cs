@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Domain.Entities.Foods
 {
-    public class Food:Auditable
+    public sealed class Food:Auditable
     {
         public string  Name { get; set; }
         public string Description { get; set; }
