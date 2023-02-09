@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelissimoCloneWPF.Domain", "BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj", "{D23A0E10-1F26-40B7-AC59-AB3E5505D010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Domain", "BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj", "{D23A0E10-1F26-40B7-AC59-AB3E5505D010}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Data", "BellissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj", "{37CA762E-D2DB-41D2-967E-37D8175F6ABE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CA762E-D2DB-41D2-967E-37D8175F6ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CA762E-D2DB-41D2-967E-37D8175F6ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CA762E-D2DB-41D2-967E-37D8175F6ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CA762E-D2DB-41D2-967E-37D8175F6ABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
