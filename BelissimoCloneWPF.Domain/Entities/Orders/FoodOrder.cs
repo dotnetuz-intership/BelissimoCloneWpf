@@ -1,7 +1,7 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
 using BelissimoCloneWPF.Domain.Entities.Baskets;
 
-namespace BelissimoCloneWPF.Domain.Entities.FoodOrders
+namespace BelissimoCloneWPF.Domain.Entities.Orders
 {
     public class FoodOrder : Auditable
     {
