@@ -1,5 +1,4 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
-using BelissimoCloneWPF.Domain.Entities.Baskets;
 using BelissimoCloneWPF.Domain.Entities.Foods;
 
 namespace BelissimoCloneWPF.Domain.Entities.Orders
