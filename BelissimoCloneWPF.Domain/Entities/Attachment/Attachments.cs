@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BelissimoCloneWPF.Domain.Entities.Attachments
+namespace BelissimoCloneWPF.Domain.Entities.Attachment
 {
     public class Attachments : Auditable
     {

@@ -10,11 +10,14 @@ namespace BelissimoCloneWPF.Domain.Entities.Orders
     {
         public string Location { get; set; }
         public bool IsPayed { get; set; }
-        public Basket BasketId { get; set; }
         public OrderType OrderTypes { get; set; }
-        public User CourierId { get; set; }
         public PaymentType PaymentTypes { get; set; }
-        public Branch BranchId { get; set; }
+        public int BasketId { get; set; }
+        public Basket Basket { get; set; }   
+        public int CourierId { get; set; }
+        public User Courier { get; set; }
+        public int BranchId { get; set; }
+        public Branch Branch { get; set; }
 
     }
 }
