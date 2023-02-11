@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BelissimoCloneWPF.Service.DTOs
+namespace BelissimoCloneWPF.Service.DTOs.Users
 {
     public class UserForCreationDTO
     {
