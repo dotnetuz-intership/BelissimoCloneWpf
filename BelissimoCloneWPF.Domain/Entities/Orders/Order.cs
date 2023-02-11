@@ -6,7 +6,7 @@ using BelissimoCloneWPF.Domain.Enums;
 
 namespace BelissimoCloneWPF.Domain.Entities.Orders
 {
-    public class Order : Auditable
+    public sealed class Order : Auditable
     {
         public string Location { get; set; }
         public bool IsPayed { get; set; }

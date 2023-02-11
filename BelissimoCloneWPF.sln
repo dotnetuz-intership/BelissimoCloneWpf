@@ -12,11 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Domain", "BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj", "{D23A0E10-1F26-40B7-AC59-AB3E5505D010}"
 EndProject
-<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Data", "BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj", "{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}"
-=======
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Data", "BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj", "{808B57BC-35FF-467C-9D0A-C2018211B4BC}"
->>>>>>> 3f11228524d97c6938eeebbee5671f70d40e71d4
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelissimoCloneWPF.Service", "BelissimoCloneWPF.Service\BelissimoCloneWPF.Service.csproj", "{BD43F156-9D15-4081-9CA3-9229296066BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,17 +30,14 @@ Global
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
-		{808B57BC-35FF-467C-9D0A-C2018211B4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{808B57BC-35FF-467C-9D0A-C2018211B4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{808B57BC-35FF-467C-9D0A-C2018211B4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{808B57BC-35FF-467C-9D0A-C2018211B4BC}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> 3f11228524d97c6938eeebbee5671f70d40e71d4
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
