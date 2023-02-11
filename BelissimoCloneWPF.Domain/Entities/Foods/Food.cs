@@ -1,4 +1,5 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
+using BelissimoCloneWPF.Domain.Entities.Attachment;
 
 namespace BelissimoCloneWPF.Domain.Entities.Foods
 {
@@ -9,6 +10,7 @@ namespace BelissimoCloneWPF.Domain.Entities.Foods
         public int Price { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int AttachmentId { get; set; }
+        public int AttachmentsId { get; set; }
+        public Attachments Attachment { get; set; }
     }
 }
