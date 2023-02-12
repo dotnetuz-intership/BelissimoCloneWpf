@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="IRepositories\" />
     <Folder Include="Contexts\" />
     <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj" />
   </ItemGroup>
 
 </Project>
