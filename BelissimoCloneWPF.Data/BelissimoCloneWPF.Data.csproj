@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="IRepositories\" />
-    <Folder Include="Contexts\" />
-    <Folder Include="Repositories\" />
+    <Compile Remove="Contexts\**" />
+    <Compile Remove="IRepositories\**" />
+    <Compile Remove="Repositories\**" />
+    <EmbeddedResource Remove="Contexts\**" />
+    <EmbeddedResource Remove="IRepositories\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <None Remove="Contexts\**" />
+    <None Remove="IRepositories\**" />
+    <None Remove="Repositories\**" />
   </ItemGroup>
 
 </Project>
