@@ -2,13 +2,13 @@
 
 namespace BelissimoCloneWPF.Data.IRepositories
 {
-    public interface IGenericRepository<Auditable> where Auditable : class
+    public interface IGenericRepository<T> where T : class
     {
-        ValueTask<Auditable> CreateAsync(Auditable entity);
-        Auditable Update(Auditable entity);
-        ValueTask<bool> DeleteAsync(Expression<Func<Auditable, bool>> expression);
-        ValueTask<Auditable> GetAsync(Expression<Func<Auditable, bool>> expression, string[] includes = null);
-        IQueryable<Auditable> GetAll(Expression<Func<Auditable, bool>> expression,
+        ValueTask<T> CreateAsync(T entity);
+        T Update(T entity);
+        ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression);
+        ValueTask<T> GetAsync(Expression<Func<T, bool>> expression, string[] includes = null);
+        IQueryable<T> GetAll(Expression<Func<T, bool>> expression,
             string[] includes = null,
             bool isTracking = true);
     }
