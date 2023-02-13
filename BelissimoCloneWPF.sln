@@ -12,7 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Domain", "BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj", "{D23A0E10-1F26-40B7-AC59-AB3E5505D010}"
 EndProject
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Data", "BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj", "{4128B0F9-631E-4A90-AF6A-07CB6A665337}"
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelissimoCloneWPF.Data", "BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj", "{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelissimoCloneWPF.Service", "BelissimoCloneWPF.Service\BelissimoCloneWPF.Service.csproj", "{BD43F156-9D15-4081-9CA3-9229296066BF}"
+>>>>>>> 27185f40c51de66e2337e5a76e2261bebf329afe
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +34,21 @@ Global
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D23A0E10-1F26-40B7-AC59-AB3E5505D010}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{4128B0F9-631E-4A90-AF6A-07CB6A665337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4128B0F9-631E-4A90-AF6A-07CB6A665337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4128B0F9-631E-4A90-AF6A-07CB6A665337}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4128B0F9-631E-4A90-AF6A-07CB6A665337}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E9CFF7-3968-4756-8B3A-A15FB8BEB171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD43F156-9D15-4081-9CA3-9229296066BF}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 27185f40c51de66e2337e5a76e2261bebf329afe
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

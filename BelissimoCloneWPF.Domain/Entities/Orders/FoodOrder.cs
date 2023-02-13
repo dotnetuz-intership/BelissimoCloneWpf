@@ -1,12 +1,14 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
-using BelissimoCloneWPF.Domain.Entities.Baskets;
+using BelissimoCloneWPF.Domain.Entities.Foods;
 
 namespace BelissimoCloneWPF.Domain.Entities.Orders
 {
-    public class FoodOrder : Auditable
+    public sealed class FoodOrder : Auditable
     {
-        public int FoodId { get; set; }
         public int Count { get; set; }
-        public Basket BasketId { get; set; }
+        public int FoodId { get; set; }
+        public Food Food { get; set; }
+        public int BasketId { get; set; }
+        public Basket Basket { get; set; }
     }
 }
