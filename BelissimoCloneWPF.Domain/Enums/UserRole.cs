@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Domain.Enums
 {
-    public class UserRole
-    {
-        enum UserRoles
-        {
-            User,
-            Courier,
-            Admin
-        }
-    }
+   public enum UserRole
+   {
+        User,
+        Courier,
+        Admin
+   } 
 }
