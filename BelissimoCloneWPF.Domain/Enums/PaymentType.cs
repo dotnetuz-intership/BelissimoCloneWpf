@@ -1,11 +1,8 @@
 ﻿namespace BelissimoCloneWPF.Domain.Enums
 {
-    public class PaymentType
+    public enum PaymentType
     {
-        enum PaymentTypes
-        {
-            Cash,
-            Card
-        }
+         Cash,
+         Card
     }
 }

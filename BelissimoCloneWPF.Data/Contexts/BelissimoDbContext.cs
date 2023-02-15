@@ -5,14 +5,12 @@ using BelissimoCloneWPF.Domain.Entities.Orders;
 using BelissimoCloneWPF.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
-namespace BelissimoCloneWPF.Data.DbContexts
+namespace BelissimoCloneWPF.Data.Contexts
 {
     public class BelissimoDbContext : DbContext
     {
-        public BelissimoDbContext(DbContextOptions<BelissimoDbContext> options) : base(options)
-        {
+        
 
-        }
         public virtual DbSet<Attachments> Attachments { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
@@ -26,5 +24,5 @@ namespace BelissimoCloneWPF.Data.DbContexts
             optionsBuilder.UseNpgsql("Host=localhost; Database=DbBelissimoCloneWPF; Username=postgres; Password=1234");
         }
     }
-    
+
 }
