@@ -1,5 +1,4 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
-using BelissimoCloneWPF.Domain.Entities.Baskets;
 using BelissimoCloneWPF.Domain.Enums;
 
 namespace BelissimoCloneWPF.Domain.Entities.Users
