@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BelissimoCloneWPF.Service.DTOs.Category
+namespace BelissimoCloneWPF.Service.DTOs.Foods
 {
     public class CategoryForCreationDTO
     {
