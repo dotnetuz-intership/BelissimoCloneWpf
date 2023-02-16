@@ -10,9 +10,9 @@ namespace BelissimoCloneWPF.Service.DTOs.Orders
         [Required]
         public bool IsPayed { get; set; }
         [Required]
-        public OrderType OrderTypes { get; set; }
+        public OrderType OrderType { get; set; }
         [Required]
-        public PaymentType PaymentTypes { get; set; }
+        public PaymentType PaymentType { get; set; }
         [Required]
         public int BasketId { get; set; }
         [Required]
