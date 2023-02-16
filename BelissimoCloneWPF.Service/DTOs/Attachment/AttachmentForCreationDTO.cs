@@ -10,6 +10,6 @@ namespace BelissimoCloneWPF.Service.DTOs.Attachment
     {
         public string FullPath { get; set; }
 
-        public Stream Stream { get; set; }
+        public Stream File { get; set; }
     }
 }
