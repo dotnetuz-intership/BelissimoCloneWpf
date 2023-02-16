@@ -22,7 +22,7 @@ namespace BelissimoCloneWPF.Data.Repositories
         public async ValueTask<T> CreateAsync(T entity)
         {
             return (await _dbContext.Set<T>().AddAsync(entity)).Entity;
-            _dbContext.SaveChangesAsync();
+            SaveChangesAsync();
         }
 
         public async ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression)
@@ -35,7 +35,7 @@ namespace BelissimoCloneWPF.Data.Repositories
             else
             {
                 _dbContext.Set<T>().Remove(entity);
-                await _dbContext.SaveChangesAsync();
+                SaveChangesAsync();
                 return true;
             }
         }
@@ -53,7 +53,11 @@ namespace BelissimoCloneWPF.Data.Repositories
         public T Update(T entity)
         {
             return (_dbContext.Set<T>().Update(entity)).Entity;
-            _dbContext.SaveChanges(); 
+            SaveChangesAsync();
+        }
+        public async Task SaveChangesAsync()
+        {
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
