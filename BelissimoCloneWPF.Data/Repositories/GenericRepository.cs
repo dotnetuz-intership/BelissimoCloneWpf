@@ -14,50 +14,47 @@ namespace BelissimoCloneWPF.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : Auditable
     {
-        private readonly BelissimoDbContext _dbContext;     
+        private readonly BelissimoDbContext dbContext;     
         public GenericRepository(BelissimoDbContext dbContext)
         {
-            _dbContext = dbContext;
+           this.dbContext = dbContext;
         }
         public async ValueTask<T> CreateAsync(T entity)
         {
-            return (await _dbContext.Set<T>().AddAsync(entity)).Entity;
-            SaveChangesAsync();
+            return (await dbContext.Set<T>().AddAsync(entity)).Entity;          
         }
 
         public async ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression)
         {
-            var entity = await _dbContext.Set<T>().FirstOrDefaultAsync(expression);
+            var entity = await dbContext.Set<T>().FirstOrDefaultAsync(expression);
             if(entity==null)
             {
                 return false;
             }
             else
             {
-                _dbContext.Set<T>().Remove(entity);
-                SaveChangesAsync();
+                dbContext.Set<T>().Remove(entity);             
                 return true;
             }
         }
 
         public IQueryable<T> GetAll(Expression<Func<T, bool>> expression, string[] includes = null, bool isTracking = true)
         {
-            return _dbContext.Set<T>().Where(expression);
+            return dbContext.Set<T>().Where(expression);
         }
 
         public async ValueTask<T> GetAsync(Expression<Func<T, bool>> expression, string[] includes = null)
         {
-            return await _dbContext.Set<T>().FirstOrDefaultAsync(expression);
+            return await dbContext.Set<T>().FirstOrDefaultAsync(expression);
         }
 
         public T Update(T entity)
         {
-            return (_dbContext.Set<T>().Update(entity)).Entity;
-            SaveChangesAsync();
+            return (dbContext.Set<T>().Update(entity)).Entity;         
         }
-        public async Task SaveChangesAsync()
+        public async ValueTask SaveChangesAsync()
         {
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
         }
     }
 }
