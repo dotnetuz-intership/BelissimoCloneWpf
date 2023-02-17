@@ -14,47 +14,50 @@ namespace BelissimoCloneWPF.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : Auditable
     {
-        private readonly BelissimoDbContext dbContext;     
-        public GenericRepository(BelissimoDbContext dbContext)
+        private BelissimoDbContext dbContext; 
+        protected readonly DbSet<T> dbSet;
+        public GenericRepository(BelissimoDbContext dbcontext)
         {
-           this.dbContext = dbContext;
+           this.dbContext = dbcontext;
+           this.dbSet = dbContext.Set<T>();
         }
         public async ValueTask<T> CreateAsync(T entity)
-        {
-            return (await dbContext.Set<T>().AddAsync(entity)).Entity;          
-        }
-
+            => (await dbSet.AddAsync(entity)).Entity;          
+        
         public async ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression)
         {
-            var entity = await dbContext.Set<T>().FirstOrDefaultAsync(expression);
+            var entity = await dbSet.FirstOrDefaultAsync(expression);
+
             if(entity==null)
-            {
-                return false;
-            }
-            else
-            {
-                dbContext.Set<T>().Remove(entity);             
-                return true;
-            }
+               return false;
+
+            dbSet.Remove(entity);
+            return true;
         }
 
         public IQueryable<T> GetAll(Expression<Func<T, bool>> expression, string[] includes = null, bool isTracking = true)
         {
-            return dbContext.Set<T>().Where(expression);
+           IQueryable<T> query = expression is null ? dbSet : dbSet.Where(expression);
+
+            if (includes != null)
+                foreach (var includ in includes)
+                    if (!string.IsNullOrEmpty(includ))
+                        query = query.Include(includ);
+
+            if(!isTracking)
+                query = query.AsNoTracking();
+
+            return query;        
         }
 
         public async ValueTask<T> GetAsync(Expression<Func<T, bool>> expression, string[] includes = null)
-        {
-            return await dbContext.Set<T>().FirstOrDefaultAsync(expression);
-        }
+            => await GetAll(expression, includes, false).FirstOrDefaultAsync();
 
         public T Update(T entity)
-        {
-            return (dbContext.Set<T>().Update(entity)).Entity;         
-        }
+            => (dbSet.Update(entity)).Entity;         
+        
         public async ValueTask SaveChangesAsync()
-        {
-            await dbContext.SaveChangesAsync();
-        }
+            => await dbContext.SaveChangesAsync();
+        
     }
 }
