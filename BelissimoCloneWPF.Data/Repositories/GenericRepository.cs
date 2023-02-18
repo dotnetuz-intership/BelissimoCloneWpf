@@ -16,9 +16,9 @@ namespace BelissimoCloneWPF.Data.Repositories
     {
         private BelissimoDbContext dbContext; 
         protected readonly DbSet<T> dbSet;
-        public GenericRepository(BelissimoDbContext dbcontext)
+        public GenericRepository(BelissimoDbContext dbContext)
         {
-           this.dbContext = dbcontext;
+           this.dbContext = dbContext;
            this.dbSet = dbContext.Set<T>();
         }
         public async ValueTask<T> CreateAsync(T entity)
@@ -28,11 +28,13 @@ namespace BelissimoCloneWPF.Data.Repositories
         {
             var entity = await dbSet.FirstOrDefaultAsync(expression);
 
-            if(entity==null)
-               return false;
-
-            dbSet.Remove(entity);
-            return true;
+            if (entity == null)
+                return false;
+            else
+            {
+                dbSet.Remove(entity);
+                return true;
+            }
         }
 
         public IQueryable<T> GetAll(Expression<Func<T, bool>> expression, string[] includes = null, bool isTracking = true)
@@ -40,9 +42,9 @@ namespace BelissimoCloneWPF.Data.Repositories
            IQueryable<T> query = expression is null ? dbSet : dbSet.Where(expression);
 
             if (includes != null)
-                foreach (var includ in includes)
-                    if (!string.IsNullOrEmpty(includ))
-                        query = query.Include(includ);
+                foreach (var include in includes)
+                    if (!string.IsNullOrEmpty(include))
+                        query = query.Include(include);
 
             if(!isTracking)
                 query = query.AsNoTracking();
