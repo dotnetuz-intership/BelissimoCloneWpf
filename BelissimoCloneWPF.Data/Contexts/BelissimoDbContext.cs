@@ -21,7 +21,7 @@ namespace BelissimoCloneWPF.Data.Contexts
         public virtual DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost; Database=DbBelissimoCloneWPF; Username=postgres; Password=1234");
+            optionsBuilder.UseNpgsql("Host=localhost; Database=DbBelissimoCloneWPF; Username=postgres; Password=7464784");
         }
     }
 
