@@ -10,4 +10,8 @@
     <ProjectReference Include="..\BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+  </ItemGroup>
+
 </Project>
