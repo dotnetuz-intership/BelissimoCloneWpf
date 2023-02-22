@@ -4,7 +4,7 @@ namespace BelissimoCloneWPF.Service.Attributes
 {
     public class FormFileAttributes : ValidationAttribute
     {
-        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var path = (string)value;
 
