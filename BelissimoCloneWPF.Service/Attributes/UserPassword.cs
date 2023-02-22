@@ -14,9 +14,9 @@ namespace BelissimoCloneWPF.Service.Attributes
         {
             var values = (string)value;
 
-            if (!(values is string password && password.Length >= 8 &&
-                    password.Any(c => char.IsDigit(c)) &&
-                        password.Any(c => char.IsLetter(c))))
+            if (!(values is string Password && Password.Length >= 8 &&
+                    Password.Any(c => char.IsDigit(c)) &&
+                        Password.Any(c => char.IsLetter(c))))
                 return new ValidationResult("password must be at least one number and " +
                     "at least one letter and number of characters more or equal to 8");
 
