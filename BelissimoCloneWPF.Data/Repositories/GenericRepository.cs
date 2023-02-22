@@ -2,19 +2,14 @@
 using BelissimoCloneWPF.Data.IRepositories;
 using BelissimoCloneWPF.Domain.Commons;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : Auditable
     {
         private BelissimoDbContext dbContext; 
+
         protected readonly DbSet<T> dbSet;
         public GenericRepository(BelissimoDbContext dbContext)
         {
@@ -22,7 +17,7 @@ namespace BelissimoCloneWPF.Data.Repositories
            this.dbSet = dbContext.Set<T>();
         }
         public async ValueTask<T> CreateAsync(T entity)
-            => (await dbSet.AddAsync(entity)).Entity;          
+                => (await dbSet.AddAsync(entity)).Entity;          
         
         public async ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression)
         {
