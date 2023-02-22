@@ -12,6 +12,5 @@ namespace BelissimoCloneWPF.Service.Extentions
                 ? source.Take(value..(value + @params.PageSize))
                 : source;
         }
-  
     }
 }
