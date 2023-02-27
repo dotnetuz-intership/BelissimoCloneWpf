@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BelissimoCloneWPF.Service.DTOs.Baskets
+namespace BelissimoCloneWPF.Service.DTOs.Orders
 {
     public class BasketForCreationDTO
     {

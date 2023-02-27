@@ -1,7 +1,4 @@
-﻿using BelissimoCloneWPF.Domain.Entities.Foods;
-using BelissimoCloneWPF.Domain.Entities.Orders;
-
-namespace BelissimoCloneWPF.Service.DTOs.FoodOrders
+﻿namespace BelissimoCloneWPF.Service.DTOs.Orders
 {
     public class FoodOrderForCreationDTO
     {
