@@ -1,4 +1,4 @@
-﻿namespace BelissimoCloneWPF.Service.DTOs.FoodOrders
+﻿namespace BelissimoCloneWPF.Service.DTOs.Foods
 {
     public class FoodOrderForUpdateDTO 
     {

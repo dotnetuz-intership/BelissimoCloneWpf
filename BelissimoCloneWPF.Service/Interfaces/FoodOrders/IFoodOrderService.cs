@@ -1,7 +1,7 @@
 ﻿using BelissimoCloneWPF.Domain.Configurations;
 using BelissimoCloneWPF.Domain.Entities.Orders;
-using BelissimoCloneWPF.Service.DTOs.FoodOrders;
 using System.Linq.Expressions;
+using BelissimoCloneWPF.Service.DTOs.Foods;
 
 namespace BelissimoCloneWPF.Service.Interfaces.FoodOrders
 {
