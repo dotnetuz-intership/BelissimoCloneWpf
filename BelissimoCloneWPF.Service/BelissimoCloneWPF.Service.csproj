@@ -13,10 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\BelissimoCloneWPF.Domain\BelissimoCloneWPF.Domain.csproj" />
   </ItemGroup>
 
 </Project>
