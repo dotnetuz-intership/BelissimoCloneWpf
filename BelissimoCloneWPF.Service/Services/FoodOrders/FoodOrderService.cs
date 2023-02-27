@@ -27,7 +27,6 @@ namespace BelissimoCloneWPF.Service.Services.FoodOrders
             await foodOrderRepository.SaveChangesAsync();
 
             return mapper.Map<FoodOrderForViewDTO>(foodOrder);
-
         }
 
         public async ValueTask<bool> DeleteAsync(int id)
