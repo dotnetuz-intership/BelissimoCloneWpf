@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.DTOs.Foods
 {
-    public class CategoryForCreationDTO
+    public class CategoryForViewDTO
     {
-        [Required]
         public string Content { get; set; }
+
+        public ICollection<FoodForViewDTO> Foods { get; set; }
     }
 }
