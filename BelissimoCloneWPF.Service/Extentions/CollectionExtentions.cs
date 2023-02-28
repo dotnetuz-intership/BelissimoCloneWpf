@@ -1,4 +1,5 @@
 ﻿using BelissimoCloneWPF.Domain.Configurations;
+using System.Linq;
 
 namespace BelissimoCloneWPF.Service.Extentions
 {

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-    
+using System.Linq;
+
 namespace BelissimoCloneWPF.Service.Attributes
 {
     public class UserLogin : ValidationAttribute

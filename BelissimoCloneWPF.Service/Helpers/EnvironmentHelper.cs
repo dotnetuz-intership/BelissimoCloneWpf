@@ -1,4 +1,6 @@
-﻿namespace BelissimoCloneWPF.Service.Helpers
+﻿using System.IO;
+
+namespace BelissimoCloneWPF.Service.Helpers
 {
     public static class EnvironmentHelper
     {

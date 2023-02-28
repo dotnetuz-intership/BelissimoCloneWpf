@@ -1,7 +1,10 @@
 ﻿using BelissimoCloneWPF.Domain.Configurations;
 using BelissimoCloneWPF.Domain.Entities.Users;
 using BelissimoCloneWPF.Service.DTOs.Users;
+using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.Interfaces.Users
 {

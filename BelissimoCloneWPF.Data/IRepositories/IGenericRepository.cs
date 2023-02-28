@@ -1,5 +1,8 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
+using System;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Data.IRepositories
 {
