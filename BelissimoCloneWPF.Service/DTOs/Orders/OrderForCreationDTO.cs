@@ -6,7 +6,7 @@ namespace BelissimoCloneWPF.Service.DTOs.Orders
     public class OrderForCreationDTO
     {
         [Required]
-        public string? Location { get; set; }
+        public string Location { get; set; }
         [Required]
         public bool IsPayed { get; set; }
         [Required]

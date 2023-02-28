@@ -1,4 +1,6 @@
-﻿namespace BelissimoCloneWPF.Service.Exceptions
+﻿using System;
+
+namespace BelissimoCloneWPF.Service.Exceptions
 {
     public class BelissimoCloneWPFException : Exception
     {

@@ -10,7 +10,7 @@ namespace BelissimoCloneWPF.Service.Attributes
 {
     public class UserPassword : ValidationAttribute
     {
-        protected override ValidationResult? IsValid(object value, ValidationContext validationContext)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var values = (string)value;
 

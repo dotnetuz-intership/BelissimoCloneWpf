@@ -1,4 +1,5 @@
 ﻿using BelissimoCloneWPF.Domain.Commons;
+using System.Collections.Generic;
 
 namespace BelissimoCloneWPF.Domain.Entities.Foods
 {
