@@ -1,12 +1,9 @@
-﻿using System;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BelissimoCloneWPF.Data.IRepositories;
 using BelissimoCloneWPF.Domain.Entities.Users;
 using BelissimoCloneWPF.Service.DTOs.Users;
 using BelissimoCloneWPF.Service.Exceptions;
 using BelissimoCloneWPF.Service.Interfaces.Users;
-using Microsoft.Extensions.Configuration;
 
 namespace BelissimoCloneWPF.Service.Services.Users
 {
@@ -19,11 +16,17 @@ namespace BelissimoCloneWPF.Service.Services.Users
             this.userRepository = userRepository;
         }
 
-      
-        ValueTask<bool> Login(UserForLoginDTO userForLoginDTO)
+        public async ValueTask<bool> Login(UserForLoginDTO userForLoginDTO)
         {
+            var user = await userRepository.GetAsync(u =>
+            u.Username == userForLoginDTO.Login && u.Password == userForLoginDTO.Password);
 
+            if (user == null)
+            {
+                throw new BelissimoCloneWPFException(404, "Login or Password is incorrect");
+            }
+
+            return true;
         }
-        
     }
 }
