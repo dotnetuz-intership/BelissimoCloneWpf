@@ -54,9 +54,7 @@ namespace BelissimoCloneWPF.Service.Services.Categories
 
         public async ValueTask<IEnumerable<CategoryForViewDTO>> GetAllAsync(PaginationParams @params, Expression<Func<Category, bool>> expression)
         {
-
             var categories = categoryRepository.GetAll(expression: expression, isTracking: false);
-
 
             return mapper.Map<IEnumerable<CategoryForViewDTO>>(await categories.ToPagedList(@params).ToListAsync());
         }
