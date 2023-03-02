@@ -12,7 +12,7 @@ namespace BelissimoCloneWPF.Service.Interfaces.Branches
     {
         ValueTask<BranchForViewDTO> CreateAsync(BranchForCreationDTO branchForCreationDTO);
 
-        ValueTask<BranchForViewDTO> UpdateAsync(int id, BranchForUpdateDTO branchForUpdateDTO);
+        ValueTask<BranchForViewDTO> UpdateAsync(int id, BranchForCreationDTO branchForCreationDTO);
 
         ValueTask<bool> DeleteAsync(int id);
 

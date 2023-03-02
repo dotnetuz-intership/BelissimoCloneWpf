@@ -3,7 +3,10 @@ using BelissimoCloneWPF.Data.IRepositories;
 using BelissimoCloneWPF.Domain.Configurations;
 using BelissimoCloneWPF.Domain.Entities.Branches;
 using BelissimoCloneWPF.Service.DTOs.Branches;
+using BelissimoCloneWPF.Service.Exceptions;
+using BelissimoCloneWPF.Service.Extentions;
 using BelissimoCloneWPF.Service.Interfaces.Branches;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -29,25 +32,47 @@ namespace BelissimoCloneWPF.Service.Services.Branches
             return mapper.Map<BranchForViewDTO>(branch);
         }
 
-        public ValueTask<bool> DeleteAsync(int id)
+        public async ValueTask<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var isDeleted = await branchRepository.DeleteAsync(b => b.Id == id);
+            await branchRepository.SaveChangesAsync();
+
+            if (!isDeleted)
+                throw new BelissimoCloneWPFException(404, "Branch not found");
+
+            return true;
         }
 
-        public ValueTask<IEnumerable<BranchForViewDTO>> GetAllAsync
+        public async ValueTask<IEnumerable<BranchForViewDTO>> GetAllAsync
             (PaginationParams @params, Expression<Func<Branch, bool>> expression = null)
         {
-            throw new NotImplementedException();
+            var branch = branchRepository.GetAll(expression: expression, isTracking: false);
+
+            return mapper.Map<List<BranchForViewDTO>>(await branch.ToPagedList(@params).ToListAsync());
         }
 
-        public ValueTask<BranchForViewDTO> GetAsync(Expression<Func<Branch, bool>> expression)
+        public async ValueTask<BranchForViewDTO> GetAsync(Expression<Func<Branch, bool>> expression)
         {
-            throw new NotImplementedException();
+            var branch = await branchRepository.GetAsync(expression);
+
+            if (branch is null)
+                throw new BelissimoCloneWPFException(404, "Branch not found");
+
+            return mapper.Map<BranchForViewDTO>(branch);
         }
 
-        public ValueTask<BranchForViewDTO> UpdateAsync(int id, BranchForUpdateDTO branchForUpdateDTO)
+        public async ValueTask<BranchForViewDTO> UpdateAsync(int id, BranchForCreationDTO branchForCreationDTO)
         {
-            throw new NotImplementedException();
+            var existBranch = await branchRepository.GetAsync(u => u.Id == id);
+
+            if (existBranch == null)
+                throw new BelissimoCloneWPFException(404, "Branch not found");
+
+            existBranch.UpdatedAt = DateTime.UtcNow;
+            existBranch = branchRepository.Update(mapper.Map(branchForCreationDTO, existBranch));
+            await branchRepository.SaveChangesAsync();
+
+            return mapper.Map<BranchForViewDTO>(existBranch);
         }
     }
 }
