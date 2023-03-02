@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace BelissimoCloneWPF.Service.Services.Branches
+namespace BelissimoCloneWPF.Service.Services.BranchServices
 {
     internal class BranchService : IBranchService
     {
