@@ -17,7 +17,6 @@ namespace BelissimoCloneWPF.Service.Services.Categories
     public class CategoryService : ICategoryService
     {
         private readonly IGenericRepository<Category> categoryRepository;
-
         private readonly IMapper mapper;
 
         public CategoryService(IGenericRepository<Category> categoryRepository, IMapper mapper)
@@ -28,13 +27,13 @@ namespace BelissimoCloneWPF.Service.Services.Categories
 
         public async ValueTask<CategoryForViewDTO> CreateAsync(CategoryForCreationDTO categoryForCreationDTO)
         {
-            var alreadyCategory = await categoryRepository.GetAsync(c => c.Content == categoryForCreationDTO.Content);
+            var alreadyCategory = await categoryRepository.GetAsync(c => 
+                c.Content == categoryForCreationDTO.Content);
 
             if (alreadyCategory != null)
                 throw new BelissimoCloneWPFException(400, "Category with such categoryname already exist");
 
             var category = await categoryRepository.CreateAsync(mapper.Map<Category>(categoryForCreationDTO));
-
             await categoryRepository.SaveChangesAsync();
 
             return mapper.Map<CategoryForViewDTO>(category);
@@ -52,11 +51,13 @@ namespace BelissimoCloneWPF.Service.Services.Categories
             return isDelete;
         }
 
-        public async ValueTask<IEnumerable<CategoryForViewDTO>> GetAllAsync(PaginationParams @params, Expression<Func<Category, bool>> expression)
+        public async ValueTask<IEnumerable<CategoryForViewDTO>> GetAllAsync(
+            PaginationParams @params, Expression<Func<Category, bool>> expression)
         {
             var categories = categoryRepository.GetAll(expression: expression, isTracking: false);
 
-            return mapper.Map<IEnumerable<CategoryForViewDTO>>(await categories.ToPagedList(@params).ToListAsync());
+            return mapper.Map<IEnumerable<CategoryForViewDTO>>(
+                await categories.ToPagedList(@params).ToListAsync());
         }
 
         public async ValueTask<CategoryForViewDTO> GetAsync(Expression<Func<Category, bool>> expression)
@@ -71,14 +72,12 @@ namespace BelissimoCloneWPF.Service.Services.Categories
 
         public async ValueTask<CategoryForViewDTO> UpdateAsync(int id, CategoryForCreationDTO categoryForCreationDTO)
         {
-
             var categoryData = await categoryRepository.GetAsync(c => c.Id == id);
 
             if (categoryData == null)
                 throw new BelissimoCloneWPFException(404, "Category Not found");
 
             categoryData = categoryRepository.Update(mapper.Map(categoryForCreationDTO, categoryData));
-
             await categoryRepository.SaveChangesAsync();
 
             return mapper.Map<CategoryForViewDTO>(categoryData);
