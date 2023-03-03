@@ -12,8 +12,10 @@ using BelissimoCloneWPF.Service.Interfaces.Attachment;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.Services.Attachment
@@ -29,8 +31,19 @@ namespace BelissimoCloneWPF.Service.Services.Attachment
         }
         public async ValueTask<Attachments> CreateAsync(AttachmentForCreationDTO attachemntForCreationDTO)
         {
+            FileStream fileStream = attachemntForCreationDTO.File as FileStream;
+            string fileName = fileStream.Name;
+
+            var filePath = Path.Combine(attachemntForCreationDTO.FullPath, fileName);
+            
+            using (var file = new FileStream(filePath, FileMode.Create))
+            {
+                await attachemntForCreationDTO.File.CopyToAsync(file);
+            }
+            
             var attachmentCreation = await attachmentRepository.CreateAsync(mapper.Map<Attachments>(attachemntForCreationDTO));
             await attachmentRepository.SaveChangesAsync();
+            
             if(attachmentCreation != null)
             {
                 throw new BelissimoCloneWPFException(404, "Attachment creation faild!");
@@ -40,11 +53,17 @@ namespace BelissimoCloneWPF.Service.Services.Attachment
 
         public async ValueTask<bool> DeleteAsync(int id)
         {
-            var isAttachmentDeleted = await attachmentRepository.DeleteAsync(x => x.Id == id);
+            var attachment = await attachmentRepository.GetAsync(x => x.Id == id);
+            
+            if (attachment == null)
+                 throw new BelissimoCloneWPFException(404, "Attachment not found!");
+            
+            File.Delete(attachment.FullPath);
+
+            await attachmentRepository.DeleteAsync(x => x.Id == id);
             await attachmentRepository.SaveChangesAsync();
-            if (!isAttachmentDeleted)
-                throw new BelissimoCloneWPFException(404, "Attachment not found!");
-            return isAttachmentDeleted;
+            return true;
+
         }
 
         public async ValueTask<IEnumerable<Attachments>> GetAllAsync(PaginationParams @params, Expression<Func<Attachments, bool>> expression = null)
@@ -66,13 +85,25 @@ namespace BelissimoCloneWPF.Service.Services.Attachment
 
         }
 
-        public async ValueTask<Attachments> UpdateAsync(int id, int foodId, AttachmentForCreationDTO attachemntForCreationDTO)
+        public async ValueTask<Attachments> UpdateAsync(int id, AttachmentForCreationDTO attachemntForUpdateDTO)
         {
             var existingAttachment = await attachmentRepository.GetAsync(x => x.Id == id);
             if (existingAttachment == null)
                 throw new BelissimoCloneWPFException(404, "Attachment not found!");
+            
+            FileStream fileStream = attachemntForUpdateDTO.File as FileStream;
+            string fileName = fileStream.Name;
+            
             existingAttachment.UpdatedAt = DateTime.UtcNow;
-            existingAttachment = attachmentRepository.Update(mapper.Map<Attachments>(attachemntForCreationDTO));
+
+            var newFilePath = Path.Combine(attachemntForUpdateDTO.FullPath, fileName);
+
+            using (var file = new FileStream(newFilePath, FileMode.Create))
+            {
+                await fileStream.CopyToAsync(file);
+            }
+
+            existingAttachment = attachmentRepository.Update(mapper.Map<Attachments>(attachemntForUpdateDTO));
             await attachmentRepository.SaveChangesAsync();
             return existingAttachment;
 

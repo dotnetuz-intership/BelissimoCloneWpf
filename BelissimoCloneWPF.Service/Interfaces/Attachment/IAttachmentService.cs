@@ -13,7 +13,7 @@ namespace BelissimoCloneWPF.Service.Interfaces.Attachment
     public interface IAttachmentService
     {
         ValueTask<Attachments> CreateAsync(AttachmentForCreationDTO attachemntForCreationDTO);
-        ValueTask<Attachments> UpdateAsync(int id, int foodId, AttachmentForCreationDTO attachemntForCreationDTO);
+        ValueTask<Attachments> UpdateAsync(int id, AttachmentForCreationDTO attachemntForUpdateDTO);
         ValueTask<bool> DeleteAsync(int id);
         ValueTask<Attachments> GetAsync(Expression<Func<Attachments, bool>> expression);
         ValueTask<IEnumerable<Attachments>> GetAllAsync(PaginationParams @params,
