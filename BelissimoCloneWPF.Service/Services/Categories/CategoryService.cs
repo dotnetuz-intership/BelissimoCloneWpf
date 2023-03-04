@@ -27,7 +27,7 @@ namespace BelissimoCloneWPF.Service.Services.Categories
 
         public async ValueTask<CategoryForViewDTO> CreateAsync(CategoryForCreationDTO categoryForCreationDTO)
         {
-            var alreadyCategory = await categoryRepository.GetAsync(c => 
+            var alreadyCategory = await categoryRepository.GetAsync(c =>
                 c.Content == categoryForCreationDTO.Content);
 
             if (alreadyCategory != null)

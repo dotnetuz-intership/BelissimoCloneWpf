@@ -2,18 +2,14 @@
 using BelissimoCloneWPF.Data.IRepositories;
 using BelissimoCloneWPF.Domain.Configurations;
 using BelissimoCloneWPF.Domain.Entities.Foods;
-using BelissimoCloneWPF.Domain.Entities.Orders;
 using BelissimoCloneWPF.Service.DTOs.Foods;
-using BelissimoCloneWPF.Service.DTOs.Orders;
 using BelissimoCloneWPF.Service.Exceptions;
 using BelissimoCloneWPF.Service.Extentions;
 using BelissimoCloneWPF.Service.Interfaces.Foods;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.Services.Foods
@@ -38,7 +34,7 @@ namespace BelissimoCloneWPF.Service.Services.Foods
 
         public async ValueTask<bool> DeleteAsync(int id)
         {
-            var remove = await foodRepository.DeleteAsync(i => i.Id== id);
+            var remove = await foodRepository.DeleteAsync(i => i.Id == id);
             await foodRepository.SaveChangesAsync();
 
             if (!remove)
@@ -71,7 +67,7 @@ namespace BelissimoCloneWPF.Service.Services.Foods
             if (isExists == null)
                 throw new BelissimoCloneWPFException(404, "Food not found");
 
-            isExists.UpdatedAt= DateTime.UtcNow;
+            isExists.UpdatedAt = DateTime.UtcNow;
             isExists = foodRepository.Update(mapper.Map(foodForCreattionDTO, isExists));
 
             return mapper.Map<FoodForViewDTO>(isExists);

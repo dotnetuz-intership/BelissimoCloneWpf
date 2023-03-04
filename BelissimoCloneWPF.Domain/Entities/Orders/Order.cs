@@ -12,7 +12,7 @@ namespace BelissimoCloneWPF.Domain.Entities.Orders
         public OrderType OrderTypes { get; set; }
         public PaymentType PaymentTypes { get; set; }
         public int BasketId { get; set; }
-        public Basket Basket { get; set; }   
+        public Basket Basket { get; set; }
         public int CourierId { get; set; }
         public User Courier { get; set; }
         public int BranchId { get; set; }

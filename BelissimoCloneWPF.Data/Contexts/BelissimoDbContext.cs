@@ -9,7 +9,7 @@ namespace BelissimoCloneWPF.Data.Contexts
 {
     public class BelissimoDbContext : DbContext
     {
-        
+
 
         public virtual DbSet<Attachments> Attachments { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }

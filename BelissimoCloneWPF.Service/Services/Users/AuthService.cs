@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
-using BelissimoCloneWPF.Data.IRepositories;
+﻿using BelissimoCloneWPF.Data.IRepositories;
 using BelissimoCloneWPF.Domain.Entities.Users;
 using BelissimoCloneWPF.Service.DTOs.Users;
 using BelissimoCloneWPF.Service.Exceptions;
 using BelissimoCloneWPF.Service.Interfaces.Users;
+using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.Services.Users
 {

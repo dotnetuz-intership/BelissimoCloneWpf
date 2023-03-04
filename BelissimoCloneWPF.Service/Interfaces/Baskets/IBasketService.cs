@@ -4,16 +4,14 @@ using BelissimoCloneWPF.Service.DTOs.Baskets;
 using BelissimoCloneWPF.Service.DTOs.Orders;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.Interfaces.Baskets
 {
     public interface IBasketService
     {
-       ValueTask<BasketForViewDTO> CreateAsync(BasketForCreationDTO basketForCreationDTO);
+        ValueTask<BasketForViewDTO> CreateAsync(BasketForCreationDTO basketForCreationDTO);
 
         ValueTask<BasketForViewDTO> UpdateAsync(int id, BasketForUpdateDTO basketForUpdateDTO);
 

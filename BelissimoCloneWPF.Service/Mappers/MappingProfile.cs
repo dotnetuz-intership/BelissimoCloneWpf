@@ -1,5 +1,4 @@
-﻿using System.Net.Mail;
-using AutoMapper;
+﻿using AutoMapper;
 using BelissimoCloneWPF.Domain.Entities.Branches;
 using BelissimoCloneWPF.Domain.Entities.Foods;
 using BelissimoCloneWPF.Domain.Entities.Orders;
@@ -9,6 +8,7 @@ using BelissimoCloneWPF.Service.DTOs.Branches;
 using BelissimoCloneWPF.Service.DTOs.Foods;
 using BelissimoCloneWPF.Service.DTOs.Orders;
 using BelissimoCloneWPF.Service.DTOs.Users;
+using System.Net.Mail;
 
 namespace BelissimoCloneWPF.Service.Mappers
 {
@@ -18,7 +18,7 @@ namespace BelissimoCloneWPF.Service.Mappers
         {
 
             //User
-            CreateMap<User,UserForCreationDTO>().ReverseMap();
+            CreateMap<User, UserForCreationDTO>().ReverseMap();
 
             //Order
             CreateMap<Order, OrderForCreationDTO>().ReverseMap();
