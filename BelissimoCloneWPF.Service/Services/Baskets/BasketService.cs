@@ -16,8 +16,8 @@ namespace BelissimoCloneWPF.Service.Services.Baskets
     {
         private readonly IGenericRepository<Basket> basketRepository;
         private readonly IMapper mapper;
-        
-        public BasketService(IGenericRepository<Basket> basketRepository, IMapper mapper) 
+
+        public BasketService(IGenericRepository<Basket> basketRepository, IMapper mapper)
         {
             this.basketRepository = basketRepository;
             this.mapper = mapper;

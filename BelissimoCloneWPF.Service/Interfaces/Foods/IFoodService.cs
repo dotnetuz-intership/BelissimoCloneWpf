@@ -1,12 +1,9 @@
 ﻿using BelissimoCloneWPF.Domain.Configurations;
 using BelissimoCloneWPF.Domain.Entities.Foods;
-using BelissimoCloneWPF.Domain.Entities.Orders;
 using BelissimoCloneWPF.Service.DTOs.Foods;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BelissimoCloneWPF.Service.Interfaces.Foods

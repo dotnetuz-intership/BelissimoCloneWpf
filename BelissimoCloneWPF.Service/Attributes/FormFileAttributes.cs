@@ -13,7 +13,7 @@ namespace BelissimoCloneWPF.Service.Attributes
             if (!File.Exists(path))
                 return new ValidationResult("File not found.");
 
-            string[] extensions = new string[]{".png", ".jpg", ".ico"};         
+            string[] extensions = new string[] { ".png", ".jpg", ".ico" };
             var extension = Path.GetExtension(path);
 
             if (!extensions.Contains(extension))
