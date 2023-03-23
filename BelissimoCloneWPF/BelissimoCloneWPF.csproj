@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\bellogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,6 +20,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BelissimoCloneWPF.Data\BelissimoCloneWPF.Data.csproj" />
+    <ProjectReference Include="..\BelissimoCloneWPF.Service\BelissimoCloneWPF.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\bellogo.png" />
   </ItemGroup>
 
 </Project>
