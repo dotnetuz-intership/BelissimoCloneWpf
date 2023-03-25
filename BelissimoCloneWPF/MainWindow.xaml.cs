@@ -31,5 +31,22 @@ namespace BelissimoCloneWPF
             foodController.FoodDescription.Text = "Pizza";
             MyControll.Items.Add(foodController);
         }
+        private void yetkazib_berish_btn_Click(object sender, RoutedEventArgs e)
+        {
+            yetkazib_berish_btn.IsEnabled = false;
+            olib_ketish_btn.IsEnabled = true;
+
+            manzil_btn.Visibility = Visibility.Visible;
+            filial_btn.Visibility = Visibility.Collapsed;
+        }
+
+        private void olib_ketish_btn_Click(object sender, RoutedEventArgs e)
+        {
+            olib_ketish_btn.IsEnabled = false;
+            yetkazib_berish_btn.IsEnabled = true;
+
+            manzil_btn.Visibility = Visibility.Collapsed;
+            filial_btn.Visibility = Visibility.Visible;
+        }
     }
 }
