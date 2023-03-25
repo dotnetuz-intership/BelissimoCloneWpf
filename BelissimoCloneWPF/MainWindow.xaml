@@ -3,10 +3,211 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:BelissimoCloneWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowState="Maximized" 
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"  
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}"  
+        Title="MainWindow" >
 
-    </Grid>
+    <StackPanel>
+
+
+        <!--Buyurtmaning turini tanlash bulimi-->
+        <StackPanel Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button x:Name="olib_ketish_btn"
+                            Margin="5"
+                            Width="128"
+                            BorderThickness="0.1"
+                            md:ButtonAssist.CornerRadius="10"
+                            Click="olib_ketish_btn_Click"
+                            Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                            >Olib ketish</Button>
+
+                    <Button x:Name="yetkazib_berish_btn"
+                            Margin="5"
+                            BorderThickness="0.1"
+                            Width="128"
+                            md:ButtonAssist.CornerRadius="10"                          
+                            Click="yetkazib_berish_btn_Click"
+                            Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                            >Yetkazib berish</Button>
+                </StackPanel>
+
+                <Button  
+                        x:Name="manzil_btn"
+                        Visibility="Visible"
+                        BorderThickness="0.1"
+                        Height="34"                        
+                        BorderBrush="White"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Background="#FFF2F4" 
+                        md:ButtonAssist.CornerRadius="12"
+                        Width="423" Grid.ColumnSpan="2" >
+
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="340"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock Foreground="Red"
+                               HorizontalAlignment="Left"
+                               Text="Yetkazib berish manzilini tanlang"
+                               FontSize="15"
+                               Height="30"/>
+                        <md:PackIcon 
+                                Margin="4,0,5,0"
+                                Grid.Column="1"
+                          
+                                Kind="Pen"
+                                VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                                Background="White"
+                                Height="22"
+                                Foreground="Red"
+                                Width="25" 
+                                />
+
+                    </Grid>
+
+
+
+                </Button>
+                
+                <Button       
+                        x:Name="filial_btn"
+                        Visibility="Collapsed"
+                        BorderThickness="0.1"
+                        Height="34"                   
+                        BorderBrush="White"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Background="#FFF2F4" 
+                        md:ButtonAssist.CornerRadius="12"
+                        Width="443" Grid.ColumnSpan="2" >
+
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="340"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock Foreground="Red"
+                               HorizontalAlignment="Left"
+                               Text="Filialni tanlang"
+                               FontSize="15"
+                               Height="30"/>
+                        <md:PackIcon 
+                                Margin="4,0,5,0"
+                                Grid.Column="1"                         
+                                Kind="Pen"
+                                VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                                Background="White"
+                                Height="22"
+                                Foreground="Red"
+                                Width="25" 
+                                />
+
+                    </Grid>
+
+
+
+                </Button>
+
+            </Grid>
+        </StackPanel>
+
+        <!--Kategoriyalar bulimi-->
+        <Grid Margin="15">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="903*"/>
+                <ColumnDefinition Width="478*"/>
+                <ColumnDefinition Width="155"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TabControl Grid.Column="0" Grid.ColumnSpan="2"
+                       >
+                <TabItem  Header="Kombo">
+                    <TextBlock Text="Bu Kombo bulimi"
+                                   FontSize="25"
+                                    Foreground="Red"/>
+                </TabItem>
+                <TabItem Header="Pits">
+                    <TextBlock Text="Bu pitsa bulimi"
+                                   FontSize="25"
+                                   Foreground="Red"/>
+                </TabItem>
+                <TabItem Header="Gazaklar">
+                    <TextBlock Text="Bu gazarklar bulimi"
+                                   FontSize="25"
+                                   Foreground="Red"/>
+                </TabItem>
+                <TabItem Header="Ichimliklar">
+                    <TextBlock Text="Bu ichimliklar bulimi"
+                                   FontSize="25"
+                                   Foreground="Red"/>
+                </TabItem>
+                <TabItem Header="Salatlar">
+                    <TextBlock Text="Bu salatlar bulimi"
+                                   FontSize="25"
+                                   Foreground="Red"/>
+                </TabItem>
+                <TabItem Header="Desertlar">
+                    <TextBlock Text="Bu desertlar bulimi"
+                                   FontSize="25"
+                                   Foreground="Red"/>
+                </TabItem>
+                <TabItem Header="Souslar">
+                    <TextBlock Text="Bu souslar bulimi"
+                                   FontSize="25"
+                                   Foreground="Red"/>
+                </TabItem>
+            </TabControl>
+
+
+            <Button     Grid.Column="2"
+                        x:Name="bucket_btn"
+                        BorderThickness="0.1"
+                        Height="35" 
+                        Margin="0,10,0,0"                      
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Background="Red" 
+                        md:ButtonAssist.CornerRadius="12"
+                        Width="135" >
+
+                <StackPanel Orientation="Horizontal">
+
+
+                    <TextBlock Text="Savatcha | "
+                                   FontSize="15"/>
+                    <TextBlock 
+                            x:Name="bucket_Count_txt"
+                            Text="8"
+                                   FontSize="15"/>
+
+                </StackPanel>
+
+
+            </Button>
+
+
+        </Grid>
+    </StackPanel>
 </Window>
