@@ -34,13 +34,13 @@ namespace BelissimoCloneWPF.Service.Services.Attachment
             FileStream fileStream = attachemntForCreationDTO.File as FileStream;
             string fileName = fileStream.Name;
 
-            var filePath = Path.Combine(attachemntForCreationDTO.FullPath, fileName);
-            
-            using (var file = new FileStream(filePath, FileMode.Create))
+            var filePath = Path.Combine(attachemntForCreationDTO.FullPath, "wwwroot", fileName);
+
+            using (var newFileStream = new FileStream(filePath, FileMode.Create))
             {
-                await attachemntForCreationDTO.File.CopyToAsync(file);
+                fileStream.CopyTo(newFileStream);
             }
-            
+
             var attachmentCreation = await attachmentRepository.CreateAsync(mapper.Map<Attachments>(attachemntForCreationDTO));
             await attachmentRepository.SaveChangesAsync();
             
