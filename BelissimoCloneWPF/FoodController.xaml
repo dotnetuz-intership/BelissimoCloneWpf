@@ -14,7 +14,8 @@
             <Image
                 x:Name="FoodImage"
                 Height="100"
-                VerticalAlignment="Top" />
+                VerticalAlignment="Top"
+                Source="Images/bellogo.png" />
             <TextBlock
                 x:Name="FoodName"
                 FontSize="20"
